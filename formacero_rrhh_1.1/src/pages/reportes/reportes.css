@@ -1,26 +1,34 @@
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    margin: 0;
-    padding: 40px;
-    color: white;
-}
+/* =========================
+   TITULO SECCIÓN
+========================= */
 
 h2 {
     text-align: center;
     margin-bottom: 40px;
 }
 
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
 .contenedor-reportes {
     max-width: 1200px;
     margin: auto;
 }
+
+/* =========================
+   GRID DE REPORTES
+========================= */
 
 .grid-reportes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
 }
+
+/* =========================
+   TARJETAS
+========================= */
 
 .tarjeta {
     background: white;
@@ -39,6 +47,10 @@ h2 {
     margin-top: 0;
     color: #1e3a8a;
 }
+
+/* =========================
+   DETALLES DE TARJETA
+========================= */
 
 .fecha {
     font-size: 13px;
@@ -63,6 +75,10 @@ h2 {
     margin-top: 15px;
     text-align: right;
 }
+
+/* =========================
+   BOTONES DE ESTADO
+========================= */
 
 .btn-resuelto {
     background: #16a34a;

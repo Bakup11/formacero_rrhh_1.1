@@ -29,49 +29,6 @@ color:var(--color-texto);
 }
 
 
-/* HEADER */
-
-.header{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:15px 40px;
-
-background:var(--color-primario);
-color:white;
-
-}
-
-.logo{
-font-weight:bold;
-font-size:1.3rem;
-}
-
-.back-btn{
-color:white;
-text-decoration:none;
-}
-
-
-/* HERO */
-
-.hero{
-
-text-align:center;
-padding:40px 20px;
-
-background:linear-gradient(
-to right,
-var(--color-primario),
-var(--color-secundario)
-);
-
-color:white;
-
-}
-
 
 /* TABLA */
 

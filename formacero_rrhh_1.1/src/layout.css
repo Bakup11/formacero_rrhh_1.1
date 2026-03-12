@@ -1,0 +1,95 @@
+/* ==================================================
+   1️⃣ VARIABLES GLOBALES
+================================================== */
+:root {
+    --color-primario: #2E4A92;
+    --color-secundario: #243B7A;
+    --color-fondo: #F2F2F2;
+    --color-blanco: #ffffff;
+    --color-texto: #333;
+    --color-rojo: #e74c3c;
+    --color-verde: #2ecc71;
+    --sombra: 0 6px 18px rgba(0,0,0,0.08);
+    --radio: 12px;
+}
+
+/* ==================================================
+   2️⃣ RESET Y BODY
+================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* ==================================================
+   3️⃣ HEADER GLOBAL
+================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.back-btn {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+/* Si quieres incluir search-bar y user-profile global */
+.search-bar input {
+    padding: 8px 15px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+}
+
+/* ==================================================
+   4️⃣ HERO GLOBAL
+================================================== */
+.hero {
+    height: 200px;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, var(--color-primario), var(--color-secundario));
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==================================================
+   5️⃣ FOOTER GLOBAL
+================================================== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    margin-top: 40px;
+}

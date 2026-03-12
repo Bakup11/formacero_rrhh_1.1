@@ -29,41 +29,6 @@ body {
 }
 
 
-/* ==================================================
-   2️⃣ HEADER
-================================================== */
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: var(--color-primario);
-    color: var(--color-blanco);
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 1.3rem;
-}
-
-.back-btn {
-    color: var(--color-blanco);
-    text-decoration: none;
-}
-
-
-/* ==================================================
-   3️⃣ HERO
-================================================== */
-
-.hero {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(to right, var(--color-primario), var(--color-secundario));
-    color: white;
-}
-
 
 /* ==================================================
    4️⃣ ORGANIGRAMA PIRAMIDAL

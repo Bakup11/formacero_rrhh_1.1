@@ -1,12 +1,4 @@
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
+
 
 .contenedor-vacaciones {
     background: white;

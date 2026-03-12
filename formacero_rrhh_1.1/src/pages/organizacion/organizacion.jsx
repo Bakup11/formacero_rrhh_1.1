@@ -4,7 +4,6 @@ import "./organizacion.css";
 
 function Organizacion() {
   return (
-
     <div>
 
       {/* HEADER */}
@@ -91,8 +90,12 @@ function Organizacion() {
 
       </section>
 
-    </div>
+      {/* FOOTER */}
+      <footer className="footer">
+        © {new Date().getFullYear()} Formacero. Todos los derechos reservados.
+      </footer>
 
+    </div>
   );
 }
 

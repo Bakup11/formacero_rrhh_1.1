@@ -49,8 +49,6 @@ placeholder="Buscar empleados, cargos o documentos..."
 <button>Lista Exempleados</button>
 </Link>
 
-<button>Reclutamiento</button>
-
 <Link to="/nomina">
 <button>Nomina</button>
 </Link>

@@ -10,6 +10,8 @@ import {
   ListaExempleados,
   CertificadoLaboral,
 } from "./pages/pages.jsx";
+// App.jsx
+import './layout.css';
 
 function App() {
   return (
