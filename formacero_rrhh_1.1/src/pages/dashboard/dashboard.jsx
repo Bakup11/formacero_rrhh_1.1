@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./dashboard.css";
+import "../../layout.css";
 
 function Dashboard() {
 
 return (
 
-<div>
+<div className="app-container">
 
 {/* HEADER */}
 <header className="header">
@@ -37,43 +38,27 @@ placeholder="Buscar empleados, cargos o documentos..."
 {/* MENÚ */}
 <nav className="main-menu">
 
-<Link to="/organizacion">
-<button>Organización</button>
-</Link>
+<Link to="/organizacion" className="menu-btn">Organización</Link>
 
-<Link to="/informacion-empleados">
-<button>Empleados</button>
-</Link>
+<Link to="/informacion-empleados" className="menu-btn">Empleados</Link>
 
-<Link to="/lista-exempleados">
-<button>Lista Exempleados</button>
-</Link>
+<Link to="/lista-exempleados" className="menu-btn">Lista Exempleados</Link>
 
-<Link to="/nomina">
-<button>Nomina</button>
-</Link>
+<Link to="/nomina" className="menu-btn">Nómina</Link>
 
-<Link to="/registrar-empleados">
-<button>Registro de Empleados</button>
-</Link>
+<Link to="/registrar-empleados" className="menu-btn">Registro de Empleados</Link>
 
-<Link to="/certificado-laboral">
-<button>Certificado Laboral</button>
-</Link>
+<Link to="/certificado-laboral" className="menu-btn">Certificado Laboral</Link>
 
-<Link to="/vacaciones">
-<button>Vacaciones</button>
-</Link>
+<Link to="/vacaciones" className="menu-btn">Vacaciones</Link>
 
-<Link to="/reportes">
-<button>Reportes</button>
-</Link>
+<Link to="/reportes" className="menu-btn">Reportes</Link>
 
 </nav>
 
 
 {/* CONTENIDO */}
-<main className="content">
+<main className="main-content">
 
 <div className="card">
 <h3>Total Empleados</h3>
