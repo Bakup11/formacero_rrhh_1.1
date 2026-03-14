@@ -1,178 +1,223 @@
+/* ==================================================
+   SECCIÓN FORMULARIO NÓMINA
+================================================== */
+
+.seccion-formulario-nomina{
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:60px 20px;
+
+}
 
 
-
-/* CONTENEDOR */
+/* ==================================================
+   FORMULARIO
+================================================== */
 
 .contenedor-nomina {
 
     position: relative;
     z-index: 1;
 
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.97);
 
-    padding: 40px;
+    padding:45px;
 
-    width: 550px;
+    width:550px;
+    max-width:90%;
 
-    border-radius: 15px;
+    border-radius:15px;
+
+    border-top:6px solid #2E4A92;
 
     backdrop-filter: blur(10px);
 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    box-shadow:0 12px 35px rgba(0,0,0,0.15);
 
-    animation: fadeIn 0.6s ease-in-out;
+    animation:fadeIn 0.6s ease-in-out;
+
 }
 
 
-/* TITULO */
+/* ==================================================
+   TITULO
+================================================== */
 
-h2 {
+.contenedor-nomina h2{
 
-    text-align: center;
+    text-align:center;
 
-    margin-bottom: 25px;
+    margin-bottom:25px;
 
-    color: #2E4A92;
+    color:#2E4A92;
 
-    font-weight: 600;
+    font-weight:600;
+
 }
 
 
-/* LABELS */
+/* ==================================================
+   LABELS
+================================================== */
 
-label {
+label{
 
-    display: block;
+    display:block;
 
-    margin-top: 15px;
+    margin-top:15px;
 
-    font-weight: 600;
+    font-weight:600;
 
-    color: #333;
+    color:#333;
+
 }
 
 
-/* INPUTS */
+/* ==================================================
+   INPUTS
+================================================== */
 
 input,
-select {
+select{
 
-    width: 100%;
+    width:100%;
 
-    padding: 10px;
+    padding:10px;
 
-    margin-top: 6px;
+    margin-top:6px;
 
-    border-radius: 8px;
+    border-radius:8px;
 
-    border: 1px solid #ccc;
+    border:1px solid #ccc;
 
-    transition: 0.3s;
+    transition:0.3s;
 
-    font-size: 14px;
+    font-size:14px;
+
 }
 
 input:focus,
-select:focus {
+select:focus{
 
-    border-color: #2E4A92;
+    border-color:#2E4A92;
 
-    outline: none;
+    outline:none;
 
-    box-shadow: 0 0 8px rgba(46,74,146,0.4);
+    box-shadow:0 0 8px rgba(46,74,146,0.4);
+
 }
 
 
-/* BOTONES */
+/* ==================================================
+   BOTONES
+================================================== */
 
-button {
+.contenedor-nomina button{
 
-    margin-top: 20px;
+    margin-top:15px;
 
-    padding: 12px;
+    padding:13px;
 
-    width: 100%;
+    width:100%;
 
-    border: none;
+    border:none;
+    border-radius:8px;
 
-    border-radius: 8px;
+    background:linear-gradient(135deg,#2E4A92,#243B7A);
 
-    background: linear-gradient(135deg,#2E4A92,#243B7A);
+    color:white;
 
-    color: white;
+    font-weight:600;
+    font-size:15px;
 
-    font-weight: bold;
+    cursor:pointer;
 
-    font-size: 15px;
+    transition:all 0.25s ease;
 
-    cursor: pointer;
-
-    transition: 0.3s ease;
 }
 
-button:hover {
+.contenedor-nomina button:hover{
 
-    transform: translateY(-2px);
+    transform:translateY(-2px);
 
-    box-shadow: 0 5px 15px rgba(46,74,146,0.4);
-}
+    box-shadow:0 8px 20px rgba(46,74,146,0.35);
 
-
-/* DESPRENDIBLE */
-
-.desprendible {
-
-    margin-top: 30px;
-
-    padding: 25px;
-
-    border-radius: 10px;
-
-    background: #f9fafc;
-
-    border-left: 5px solid #2E4A92;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.desprendible h3 {
-
-    margin-top: 0;
-
-    color: #2E4A92;
-}
-
-.desprendible p {
-
-    margin: 6px 0;
-
-    font-size: 14px;
-}
-
-hr {
-
-    border: none;
-
-    height: 1px;
-
-    background: #ddd;
-
-    margin: 15px 0;
 }
 
 
-/* ANIMACION */
+/* ==================================================
+   DESPRENDIBLE
+================================================== */
 
-@keyframes fadeIn {
+.desprendible{
 
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    background:#f9fafc;
+
+    border-left:5px solid #2E4A92;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+
+}
+
+.desprendible h3{
+
+    margin-top:0;
+
+    color:#2E4A92;
+
+}
+
+.desprendible p{
+
+    margin:6px 0;
+
+    font-size:14px;
+
+}
+
+
+/* ==================================================
+   LINEA
+================================================== */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#ddd;
+
+    margin:15px 0;
+
+}
+
+
+/* ==================================================
+   ANIMACION
+================================================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 
 }

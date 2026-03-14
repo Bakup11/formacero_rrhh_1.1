@@ -205,7 +205,11 @@ opacity:0.8;
 
 }
 
-
+.actions{
+display:flex;
+gap:8px;
+align-items:center;
+}
 /* RESPONSIVE */
 
 @media (max-width:900px){

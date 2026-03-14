@@ -72,40 +72,45 @@ Fecha de generación: ${new Date().toLocaleDateString()}
         <p>Gestión de nómina y generación de desprendibles para empleados</p>
       </section>
 
-      {/* FORMULARIO DE NÓMINA */}
-      <div className="contenedor-nomina">
+      {/* SECCIÓN DEL FORMULARIO */}
+      <section className="seccion-formulario-nomina">
 
-        <label>Seleccionar empleado:</label>
-        <select value={empleado} onChange={(e) => setEmpleado(e.target.value)}>
-          <option value="">-- Seleccione --</option>
-          <option value="Juan Pérez">Juan Pérez</option>
-          <option value="María Gómez">María Gómez</option>
-          <option value="Carlos López">Carlos López</option>
-        </select>
+        <div className="contenedor-nomina">
 
-        <label>Salario Base:</label>
-        <input
-          type="number"
-          placeholder="Ej: 2000000"
-          value={salario}
-          onChange={(e) => setSalario(e.target.value)}
-        />
+          <label>Seleccionar empleado:</label>
+          <select value={empleado} onChange={(e) => setEmpleado(e.target.value)}>
+            <option value="">-- Seleccione --</option>
+            <option value="Juan Pérez">Juan Pérez</option>
+            <option value="María Gómez">María Gómez</option>
+            <option value="Carlos López">Carlos López</option>
+          </select>
 
-        <label>Días trabajados:</label>
-        <input
-          type="number"
-          placeholder="Ej: 30"
-          value={dias}
-          onChange={(e) => setDias(e.target.value)}
-        />
+          <label>Salario Base:</label>
+          <input
+            type="number"
+            placeholder="Ej: 2000000"
+            value={salario}
+            onChange={(e) => setSalario(e.target.value)}
+          />
 
-        <button onClick={generarDesprendible}>Generar</button>
-        <button onClick={descargarPDF}>Descargar PDF</button>
+          <label>Días trabajados:</label>
+          <input
+            type="number"
+            placeholder="Ej: 30"
+            value={dias}
+            onChange={(e) => setDias(e.target.value)}
+          />
 
-        <div id="desprendible" className="desprendible" ref={desprendibleRef}>
-          <pre>{desprendible}</pre>
+          <button onClick={generarDesprendible}>Generar</button>
+          <button onClick={descargarPDF}>Descargar PDF</button>
+
+          <div id="desprendible" className="desprendible" ref={desprendibleRef}>
+            <pre>{desprendible}</pre>
+          </div>
+
         </div>
-      </div>
+
+      </section>
 
       {/* FOOTER */}
       <footer className="footer">

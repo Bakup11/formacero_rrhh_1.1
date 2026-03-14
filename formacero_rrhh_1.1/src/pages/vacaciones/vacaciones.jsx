@@ -21,6 +21,7 @@ function Vacaciones() {
   }
 
   function calcularVacaciones(){
+
     if(!empleadoSeleccionado){
       setResultado("Seleccione un empleado primero");
       return;
@@ -28,8 +29,11 @@ function Vacaciones() {
 
     const fechaIngreso = new Date(empleadoSeleccionado.ingreso);
     const hoy = new Date();
+
     const años = hoy.getFullYear() - fechaIngreso.getFullYear();
+
     const diasTotales = años * 15;
+
     const disponibles = diasTotales - empleadoSeleccionado.usados;
 
     if(diasSolicitados <= disponibles){
@@ -37,9 +41,11 @@ function Vacaciones() {
     } else {
       setResultado("No tiene suficientes días disponibles");
     }
+
   }
 
   return (
+
     <div className="vacaciones-principal">
 
       {/* HEADER */}
@@ -54,37 +60,67 @@ function Vacaciones() {
         <p>Seleccione un empleado y gestione sus días de vacaciones</p>
       </section>
 
-      {/* CONTENIDO */}
-      <div className="contenedor-vacaciones">
 
-        <label>Empleado:</label>
-        <select onChange={(e)=>seleccionarEmpleado(e.target.value)}>
-          <option value="">-- Seleccione --</option>
-          {empleados.map((emp,i)=>(
-            <option key={i} value={emp.nombre}>{emp.nombre}</option>
-          ))}
-        </select>
+      {/* SECCIÓN VACACIONES */}
+      <section className="seccion-vacaciones">
 
-        {empleadoSeleccionado && (
-          <div className="info-box">
-            <p><strong>Fecha ingreso:</strong> {empleadoSeleccionado.ingreso}</p>
-            <p><strong>Días usados:</strong> {empleadoSeleccionado.usados}</p>
+        <div className="contenedor-vacaciones">
+
+          <label>Empleado:</label>
+
+          <select onChange={(e)=>seleccionarEmpleado(e.target.value)}>
+
+            <option value="">-- Seleccione --</option>
+
+            {empleados.map((emp,i)=>(
+              <option key={i} value={emp.nombre}>
+                {emp.nombre}
+              </option>
+            ))}
+
+          </select>
+
+
+          {empleadoSeleccionado && (
+
+            <div className="info-box">
+
+              <p>
+                <strong>Fecha ingreso:</strong> {empleadoSeleccionado.ingreso}
+              </p>
+
+              <p>
+                <strong>Días usados:</strong> {empleadoSeleccionado.usados}
+              </p>
+
+            </div>
+
+          )}
+
+
+          <label>Días a solicitar:</label>
+
+          <input
+            type="number"
+            placeholder="Ej: 5"
+            value={diasSolicitados}
+            onChange={(e)=>setDiasSolicitados(e.target.value)}
+          />
+
+
+          <button onClick={calcularVacaciones}>
+            Solicitar Vacaciones
+          </button>
+
+
+          <div className="resultado">
+            {resultado}
           </div>
-        )}
 
-        <label>Días a solicitar:</label>
-        <input
-          type="number"
-          placeholder="Ej: 5"
-          value={diasSolicitados}
-          onChange={(e)=>setDiasSolicitados(e.target.value)}
-        />
+        </div>
 
-        <button onClick={calcularVacaciones}>Solicitar Vacaciones</button>
+      </section>
 
-        <div className="resultado">{resultado}</div>
-
-      </div>
 
       {/* FOOTER */}
       <footer className="footer">
@@ -92,7 +128,9 @@ function Vacaciones() {
       </footer>
 
     </div>
+
   );
+
 }
 
 export default Vacaciones;

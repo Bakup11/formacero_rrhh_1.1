@@ -113,10 +113,10 @@ function InformacionEmpleados() {
                       {openRow === index ? "Ocultar documentos" : "Ver documentos"}
                     </button>
                   </td>
-                  <td>
-                    <button className="edit-btn" onClick={() => editEmployee(index)}>Editar</button>
-                    <button className="delete-btn" onClick={() => deleteEmployee(index)}>Eliminar</button>
-                  </td>
+                    <td className="actions">
+                      <button className="edit-btn" onClick={() => editEmployee(index)}>Editar</button>
+                      <button className="delete-btn" onClick={() => deleteEmployee(index)}>Eliminar</button>
+                    </td>
                 </tr>
 
                 <tr className={`documents-row ${openRow === index ? "open" : ""}`}>

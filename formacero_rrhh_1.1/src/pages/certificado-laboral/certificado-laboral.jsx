@@ -30,6 +30,7 @@ function CertificadoLaboral() {
   };
 
   const generateCertificate = () => {
+
     if (!selected) {
       alert("Selecciona un empleado");
       return;
@@ -55,9 +56,11 @@ Este certificado se expide a solicitud del interesado(a) el día ${today}.
 
     setText(certificateText);
     setVisible(true);
+
   };
 
   return (
+
     <div className="certificado-laboral-principal">
 
       {/* HEADER */}
@@ -72,33 +75,56 @@ Este certificado se expide a solicitud del interesado(a) el día ${today}.
         <p>Seleccione un empleado y genere su certificado laboral</p>
       </section>
 
-      {/* GENERADOR */}
-      <div className="container">
 
-        <div className="generator-box">
-          <select value={selected} onChange={(e)=>setSelected(e.target.value)}>
-            <option value="">Seleccionar empleado</option>
-            <option value="juan">Juan Vargas</option>
-            <option value="laura">Laura Gómez</option>
-            <option value="carlos">Carlos Pérez</option>
-          </select>
+      {/* SECCIÓN GENERADOR */}
+      <section className="seccion-certificado">
 
-          <button onClick={generateCertificate}>Generar</button>
-          <button onClick={()=>window.print()}>Imprimir</button>
-        </div>
+        <div className="container">
 
-        <div className="certificate" style={{display: visible ? "block" : "none"}}>
-          <h2>CERTIFICADO LABORAL</h2>
-          <p>{text}</p>
+          <div className="generator-box">
 
-          <div className="firma">
-            <p>Cordialmente,</p>
-            <strong>Departamento de Recursos Humanos</strong>
-            <p>Formacero S.A.S</p>
+            <select
+              value={selected}
+              onChange={(e)=>setSelected(e.target.value)}
+            >
+              <option value="">Seleccionar empleado</option>
+              <option value="juan">Juan Vargas</option>
+              <option value="laura">Laura Gómez</option>
+              <option value="carlos">Carlos Pérez</option>
+            </select>
+
+            <button onClick={generateCertificate}>
+              Generar
+            </button>
+
+            <button onClick={()=>window.print()}>
+              Imprimir
+            </button>
+
           </div>
+
+
+          <div
+            className="certificate"
+            style={{display: visible ? "block" : "none"}}
+          >
+
+            <h2>CERTIFICADO LABORAL</h2>
+
+            <p>{text}</p>
+
+            <div className="firma">
+              <p>Cordialmente,</p>
+              <strong>Departamento de Recursos Humanos</strong>
+              <p>Formacero S.A.S</p>
+            </div>
+
+          </div>
+
         </div>
 
-      </div>
+      </section>
+
 
       {/* FOOTER */}
       <footer className="footer">
@@ -106,7 +132,9 @@ Este certificado se expide a solicitud del interesado(a) el día ${today}.
       </footer>
 
     </div>
+
   );
+
 }
 
 export default CertificadoLaboral;

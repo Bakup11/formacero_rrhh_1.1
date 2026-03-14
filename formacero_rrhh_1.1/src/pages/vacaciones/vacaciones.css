@@ -1,58 +1,154 @@
+/* =========================
+   SECCIÓN VACACIONES
+========================= */
 
+.seccion-vacaciones{
 
-.contenedor-vacaciones {
-    background: white;
-    padding: 40px;
-    width: 550px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:60px 20px;
+
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #1e3a8a;
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor-vacaciones{
+
+    background:white;
+
+    padding:40px;
+
+    width:100%;
+
+    max-width:550px;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,0.08);
+
 }
 
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
+
+/* =========================
+   LABELS
+========================= */
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-weight:600;
+
 }
 
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+select{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:6px;
+
+    border-radius:8px;
+
+    border:1px solid #e5e7eb;
+
+    font-size:14px;
+
 }
 
-button {
-    margin-top: 20px;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #1e88e5, #1565c0);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+
+input:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:#3b82f6;
+
+    box-shadow:0 0 0 3px rgba(59,130,246,0.15);
+
 }
 
-button:hover {
-    opacity: 0.9;
+
+/* =========================
+   BOTÓN
+========================= */
+
+button{
+
+    margin-top:20px;
+
+    padding:12px;
+
+    width:100%;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#1e3a8a;
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
 }
 
-.info-box {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f1f5f9;
-    border-left: 5px solid #2563eb;
-    border-radius: 8px;
+button:hover{
+
+    background:#3b82f6;
+
 }
 
-.resultado {
-    margin-top: 15px;
-    font-weight: bold;
+
+/* =========================
+   INFO EMPLEADO
+========================= */
+
+.info-box{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#f9fbff;
+
+    border-left:6px solid #1e3a8a;
+
+    border-radius:8px;
+
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+.resultado{
+
+    margin-top:20px;
+
+    font-weight:600;
+
+    text-align:center;
+
 }
