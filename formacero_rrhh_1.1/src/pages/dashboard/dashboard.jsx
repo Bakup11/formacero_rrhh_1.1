@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./dashboard.css";
 import "../../layout.css";
+import "./dashboard.css";
 
 function Dashboard() {
 
@@ -58,7 +58,7 @@ placeholder="Buscar empleados, cargos o documentos..."
 
 
 {/* CONTENIDO */}
-<main className="main-content">
+<main className="dashboard-content">
 
 <div className="card">
 <h3>Total Empleados</h3>

@@ -1,6 +1,7 @@
 /* ==================================================
    1️⃣ VARIABLES GLOBALES
 ================================================== */
+
 :root {
     --color-primario: #2E4A92;
     --color-secundario: #243B7A;
@@ -13,120 +14,257 @@
     --radio: 12px;
 }
 
+
 /* ==================================================
    2️⃣ RESET GLOBAL
 ================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* Altura y ancho completo */
-html, body {
+/* RESET GLOBAL FUERTE */
+
+html, body, #root {
     height: 100%;
     width: 100%;
 }
 
-/* React root container */
+body{
+    margin:0;
+    background-color:#F2F2F2;
+}
+
+
+/* React root */
+
 #root{
     min-height:100vh;
     width:100%;
 }
 
-/* Body base */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-}
 
 /* ==================================================
-   3️⃣ CONTENEDOR PRINCIPAL APP
+   3️⃣ BODY BASE
+================================================== */
+
+body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    background-color:var(--color-fondo);
+    color:var(--color-texto);
+}
+
+
+/* ==================================================
+   4️⃣ CONTENEDOR PRINCIPAL APP
 ================================================== */
 
 .app-container{
+
     min-height:100vh;
     width:100%;
+
     display:flex;
     flex-direction:column;
+
 }
 
-/* Contenido flexible */
+
+/* Área principal flexible */
+
 .main-content{
+
     flex:1;
     width:100%;
+
 }
 
+
 /* ==================================================
-   4️⃣ HEADER GLOBAL
+   5️⃣ HEADER GLOBAL
 ================================================== */
 
 .header {
+
     width:100%;
+    height:70px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
-    background-color:var(--color-primario);
-    color:var(--color-blanco);
+
+    padding:0 40px;
+
+    background-color:#2E4A92;
+
+    color:white;
+
+    position:relative;
+    z-index:1000;
+
 }
 
-.logo {
+
+/* Logo */
+
+.logo{
+
     font-weight:bold;
     font-size:1.3rem;
+
 }
 
-.back-btn {
+
+/* Botón volver */
+
+.back-btn{
+
     color:var(--color-blanco);
     text-decoration:none;
+
 }
+
 
 /* Search */
-.search-bar input {
+
+.search-bar input{
+
     padding:8px 15px;
     width:300px;
+
     border-radius:20px;
     border:none;
+
     outline:none;
+
+    background:white;
+
 }
 
-/* User profile */
-.user-profile {
+
+/* Perfil usuario */
+
+.user-profile{
+
     display:flex;
     align-items:center;
     gap:10px;
+
 }
 
-.user-profile img {
+.user-profile img{
+
     border-radius:50%;
+
 }
+
 
 /* ==================================================
-   5️⃣ HERO GLOBAL
+   6️⃣ HERO GLOBAL
 ================================================== */
 
 .hero {
+
     width:100%;
     min-height:200px;
-    text-align:center;
-    padding:40px 20px;
-    background:linear-gradient(to right, var(--color-primario), var(--color-secundario));
-    color:white;
 
     display:flex;
+    flex-direction:column;
+
     justify-content:center;
     align-items:center;
+
+    text-align:center;
+
+    gap:4px; /* antes 12px */
+
+    padding:40px;
+
+    background:
+        linear-gradient(rgba(31,60,136,0.35), rgba(31,60,136,0.45)),
+        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+
+/* TITULO */
+
+.hero h1{
+
+    font-weight:700;
+    font-size:42px;
+    font-family:'Segoe UI', Tahoma, sans-serif;
+    color:white !important;
+
+    margin-bottom:0; /* elimina espacio extra */
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.hero p{
+
+    font-size:18px;
+    color:white !important;
+
+    max-width:700px;
+
+    line-height:1.4; /* altura correcta del texto */
+
+    margin-top:0;
+
 }
 
 /* ==================================================
-   6️⃣ FOOTER GLOBAL
+   7️⃣ FOOTER GLOBAL
 ================================================== */
 
-.footer {
+.footer{
+
     width:100%;
+
     text-align:center;
+
     padding:20px;
+
     background-color:var(--color-primario);
     color:var(--color-blanco);
+
+    margin-top:auto;
+
+}
+
+
+/* ==================================================
+   8️⃣ RESPONSIVE
+================================================== */
+
+@media (max-width:900px){
+
+    .header{
+
+        flex-direction:column;
+        gap:10px;
+        padding:20px;
+
+    }
+
+    .search-bar input{
+
+        width:100%;
+
+    }
+
+}
+
+
+@media (max-width:600px){
+
+    .hero{
+
+        padding:40px 15px;
+
+    }
+
 }
