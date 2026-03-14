@@ -23,6 +23,31 @@
 
 }
 
+/* BOTONES PARA VOLVER A MENU PRINCIPAL */
+.back-btn{
+    display: inline-block;
+    background-color: #F4B400;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* efecto al pasar el mouse */
+.back-btn:hover{
+    background-color: #d89e00;
+    color: rgb(33, 33, 33);
+    transform: translateY(-2px);
+}
+
+/* efecto al hacer clic */
+.back-btn:active{
+    transform: scale(0.95);
+}
+
 
 /* BOTONES DEL MENÚ */
 
@@ -30,8 +55,8 @@
 
     padding:10px 18px;
 
-    background-color:#2E4A92;
-    color:white;
+    background-color:#F4B400;
+    color:rgb(228, 228, 228);
 
     border-radius:8px;
     text-decoration:none;
@@ -45,7 +70,8 @@
 
 .menu-btn:hover{
 
-    background-color:#243B7A;
+    background-color:#d49c01;
+    color: rgb(59, 59, 59);
     transform:translateY(-2px);
 
 }
@@ -76,6 +102,8 @@
 .card{
 
     background-color:white;
+
+    border-left:6px solid #2E4A92;
 
     padding:25px;
 
@@ -134,7 +162,7 @@
 
 .card.alert{
 
-    border-left:6px solid #e74c3c;
+    border-left:6px solid #f50707;
 
 }
 

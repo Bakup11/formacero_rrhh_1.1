@@ -91,7 +91,7 @@ body{
 
     padding:0 40px;
 
-    background-color:#2E4A92;
+    background: linear-gradient(135deg, #1b2b4f, #1e3a8a);
 
     color:white;
 
@@ -223,7 +223,7 @@ body{
 .footer{
 
     width:100%;
-
+    background: linear-gradient(135deg, #192645, #1e3a8a);
     text-align:center;
 
     padding:20px;
