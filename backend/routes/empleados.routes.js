@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  searchEmpleado, 
   getEmpleados,
   createEmpleado,
   updateEmpleado,
@@ -7,19 +8,28 @@ import {
   countEmpleados,
   getExEmpleados,
   deleteExEmpleado,
-  getCumpleaneros 
+  getCumpleaneros,
+  getEmpleadoById // 🔹 agregamos la función para detalle por ID
 } from "../controllers/empleados.controller.js";
 
 const router = express.Router();
 
-// 🔹 CRUD
+// 🔹 BUSQUEDAS
+router.get("/search", searchEmpleado);           // 🔥 PRIMERO
+router.get("/count", countEmpleados);
+router.get("/cumpleaneros", getCumpleaneros);
+router.get("/exempleados", getExEmpleados);
+
+// 🔹 CRUD GENERAL
 router.get("/", getEmpleados);
-router.post("/", createEmpleado);   
+router.post("/", createEmpleado);
 router.put("/:id", updateEmpleado);
 router.delete("/:id", deleteEmpleado);
-router.get("/count", countEmpleados);
-router.get("/exempleados", getExEmpleados);
+
+// 🔹 DELETE EX-EMPLEADO
 router.delete("/exempleados/:id", deleteExEmpleado);
-router.get("/cumpleaneros", getCumpleaneros);
+
+// 🔹 OBTENER EMPLEADO POR ID (SIEMPRE AL FINAL)
+router.get("/:id", getEmpleadoById);             // 🔥 DINÁMICA, SIEMPRE AL FINAL
 
 export default router;

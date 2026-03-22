@@ -208,3 +208,42 @@ export const getCumpleaneros = (req, res) => {
     res.json(result);
   });
 };
+
+// 🔍 BUSCAR EMPLEADO POR NOMBRE
+export const searchEmpleado = (req, res) => {
+  const { q } = req.query;
+
+  const sql = `
+    SELECT id, nombre, cargo, departamento 
+    FROM empleados 
+    WHERE nombre LIKE ?
+    LIMIT 5
+  `;
+
+  db.query(sql, [`%${q}%`], (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json(err);
+    }
+
+    res.json(result);
+  });
+};
+
+// 🔹 OBTENER EMPLEADO POR ID
+export const getEmpleadoById = (req, res) => {
+  const { id } = req.params; // ID que viene de la URL
+
+  db.query("SELECT * FROM empleados WHERE id=?", [id], (err, result) => {
+    if (err) {
+      console.error("ERROR GET BY ID:", err);
+      return res.status(500).json(err);
+    }
+
+    if (result.length === 0) {
+      return res.status(404).json({ message: "Empleado no encontrado" });
+    }
+
+    res.json(result[0]); // retornamos un solo empleado
+  });
+};

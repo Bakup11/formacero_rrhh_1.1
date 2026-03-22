@@ -10,7 +10,10 @@ import {
   ListaExempleados,
   CertificadoLaboral,
 } from "./pages/pages.jsx";
-// App.jsx
+
+// 🔹 Import corregido para EmpleadoDetalle
+import EmpleadoDetalle from "./pages/empleado-detalle/empleado-detalle";
+
 import './layout.css';
 
 function App() {
@@ -27,6 +30,10 @@ function App() {
         <Route path="/informacion-empleados" element={<InformacionEmpleados />} />
         <Route path="/lista-exempleados" element={<ListaExempleados />} />
         <Route path="/certificado-laboral" element={<CertificadoLaboral />} />
+
+        {/* 🔹 Nueva ruta para detalle de empleado */}
+        <Route path="/empleado/:id" element={<EmpleadoDetalle />} />
+
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Router>

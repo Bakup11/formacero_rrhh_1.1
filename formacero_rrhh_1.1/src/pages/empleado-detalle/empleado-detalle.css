@@ -1,0 +1,47 @@
+.detalle-container {
+  padding: 20px;
+}
+
+.perfil-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 750px;
+  margin: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #4a90e2;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: red;
+  font-weight: bold;
+}
