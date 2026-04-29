@@ -73,11 +73,11 @@ function Login() {
 
       localStorage.setItem("user", JSON.stringify(userData));
 
-      // 🔥 REDIRECCIÓN SEGÚN ROL (MEJORA PRO)
+      // 🔥 REDIRECCIÓN SEGÚN ROL
       if (userData.rol === "admin") {
         navigate("/dashboard");
       } else {
-        navigate("/empleado"); // opcional si tienes vista empleado
+        navigate(`/empleado/${userData.id}`);
       }
 
     } catch (err) {

@@ -22,12 +22,19 @@ function EmpleadoDetalle() {
 
   // ✅ TOKEN
   const token = localStorage.getItem("token");
+  const user = JSON.parse(localStorage.getItem("user") || "null");
+  const allowedEmployeeId = String(user?.empleado_id || user?.id || "");
 
   useEffect(() => {
 
     // 🔥 PROTECCIÓN
     if (!token) {
       navigate("/login");
+      return;
+    }
+
+    if (user?.rol === "empleado" && String(id) !== allowedEmployeeId) {
+      navigate(`/empleado/${allowedEmployeeId}`);
       return;
     }
 

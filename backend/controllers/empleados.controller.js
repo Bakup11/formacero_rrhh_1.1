@@ -82,6 +82,40 @@ export const createEmpleado = async (req, res) => {
     const correoNormalizado = correo.trim().toLowerCase();
     const cedulaNormalizada = String(cedula).trim();
 
+    const { data: existingEmpleado, error: empleadoExistsError } = await supabase
+      .from("empleados")
+      .select("id")
+      .eq("correo", correoNormalizado)
+      .limit(1)
+      .single();
+
+    if (empleadoExistsError && empleadoExistsError.code !== "PGRST116") {
+      throw empleadoExistsError;
+    }
+
+    if (existingEmpleado) {
+      return res.status(409).json({
+        message: "El correo ya está registrado para otro empleado. Usa un correo diferente."
+      });
+    }
+
+    const { data: existingUsuario, error: usuarioExistsError } = await supabase
+      .from("usuarios")
+      .select("id")
+      .eq("correo", correoNormalizado)
+      .limit(1)
+      .single();
+
+    if (usuarioExistsError && usuarioExistsError.code !== "PGRST116") {
+      throw usuarioExistsError;
+    }
+
+    if (existingUsuario) {
+      return res.status(409).json({
+        message: "El correo ya está registrado para otro usuario. Usa un correo diferente."
+      });
+    }
+
     const departamentoId = departamento
       ? await findOrCreateDepartamentoId(departamento)
       : null;
@@ -103,7 +137,14 @@ export const createEmpleado = async (req, res) => {
       .insert([empleadoPayload])
       .select();
 
-    if (empError) throw empError;
+    if (empError) {
+      if (empError.code === "23505") {
+        return res.status(409).json({
+          message: "El correo ya existe en la base de datos. Usa un correo diferente."
+        });
+      }
+      throw empError;
+    }
 
     const empleadoId = empleadoData[0].id;
 
