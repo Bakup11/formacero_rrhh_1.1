@@ -114,7 +114,7 @@ Contraseña: ${data.credenciales?.password || "N/A"}
 
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ Error al registrar empleado");
+      alert(`❌ Error al registrar empleado: ${error.message || "Revise los datos e intente de nuevo."}`);
     }
   }
 
